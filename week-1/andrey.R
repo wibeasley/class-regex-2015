@@ -11,4 +11,8 @@ subject <- c(
  )
 # s <- strsplit(subject, pattern)
 
-(x <- grep(pattern="[20]", subject, value=T, perl=T))
+regex <- "^\\d.+?(\\w)$"
+(x <- grep(pattern=regex, subject, value=T, perl=T))
+(x <- grep(pattern=regex, subject, value=F, perl=T))
+
+
