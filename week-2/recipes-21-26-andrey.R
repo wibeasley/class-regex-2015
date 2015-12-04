@@ -17,13 +17,11 @@ cat(s2 <- "'()*+,-./:;<=>?@[")
 s3 <- "\]^_`{|}~." # produces error
 cat(s3 <- "\\]^_`{|}~.") # the first wack is escaped, works
 print(s3) # however it stores the first wack
-(subject <- paste(s1,s2,s3)) # combines into wrong string
-# ... <=>?@[ \\]^_`{|}~.
-# instead of
-# ... <=>?@[\]^_`{|}~.
+(subject <- paste0(s1,s2,s3)) # proper subject
 
-(s <- paste(s1,cat(s3)))
-
-subjects <- strsplit(subject, split=" ")
-regex <- "The punctuation"
+# subjects <- strsplit(subject, split=" ")
+regex <- "The punctuation characters in the ASCII table are: !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~."
 (x <- grep(pattern=regex, subject, value=T, perl=T))
+
+
+# @knitr 2_2 -----
