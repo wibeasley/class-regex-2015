@@ -25,3 +25,33 @@ regex <- "The punctuation characters in the ASCII table are: !"#$%&'()*+,-./:;<=
 
 
 # @knitr 2_2 -----
+# Match non-printable character
+
+# I don't understand how the subject is supposed to look here
+
+
+# @knitr 2_3 -----
+# Match one of many characters
+
+## A.
+subject <- c("calendar",
+             "celandar",
+             "calander",
+
+             "celender",
+             "calandar",
+
+             "celendar",
+             "celandar",
+             "calender")
+
+grep(pattern="c[ae]l[ae]nd[ae]r", x=subject, perl=F, value=F)
+grep(pattern="c[ae]l[ae]nd[ae]r", x=subject, perl=F, value=T)
+
+## B.
+# I don't understand how the subject is supposed to look here
+
+## C.
+# I don't understand how the subject is supposed to look here
+
+
