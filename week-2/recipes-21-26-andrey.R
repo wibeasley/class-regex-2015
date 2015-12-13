@@ -29,6 +29,14 @@ regex <- "The punctuation characters in the ASCII table are: !"#$%&'()*+,-./:;<=
 
 # I don't understand how the subject is supposed to look here
 
+subject <-
+"aaac
+bbb"
+subject
+
+pattern <- "(.?)\n\r?(.+)"
+pattern <- "(\\w+)\\n(\\w+)" # any number of word character, line break, any nymber of word character
+gsub(pattern, "\\2zzz\\1yyy\\2", subject) # sub - for substitution
 
 # @knitr 2_3 -----
 # Match one of many characters
