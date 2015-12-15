@@ -1,4 +1,4 @@
-# Code:3.1 (Regex Assignment)
+# Code:(Regex Assignment)
   
   subject <- 
   "Estimator                                                      MLF
@@ -24,6 +24,8 @@ Optimization algorithm                                         EMA"
 # (?s)  is toggling an option. It's not a capturing group. As it says on page 40 of our book:
 #(?s)> is the mode modifier for "dot matches line breaks" mode in .NET, Java, XRegExp,
 #PCRE, Perl, and Python
+
+# Code 3.1
 
 regex_IterationsH1 <- "(?s).*Maximum number of iterations for H1(?s).*?(\\d+).*"
 IterationsH1<- gsub(regex_IterationsH1, "\\1", subject, perl=T)
