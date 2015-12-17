@@ -42,7 +42,7 @@ print(iterations)
 # Code 3.3
 
 regex_derivative<- "(?s).*Derivative(?s).*?(\\d.\\d*\\w.\\d+).*"
-derivative<- gsub(regex_derivative, "\\1", subject, perl=T) # "\\1" reurns the first capturing group of the regular expression
+derivative<- gsub(regex_derivative, "\\1", subject, perl=T) # "\\1" returns the first capturing group of the regular expression
 
 print(derivative)
 
