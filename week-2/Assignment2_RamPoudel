@@ -1,0 +1,52 @@
+#####Exercise- Two####
+##Recipe 2.1##
+
+The Text String to be printed is
+
+The punctuation characters in the ASCII table are:
+
+    !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~*
+# capture " by using ' as quotes
+cat(s1 <- 'The punctuation characters in the ASCII table are: !"#$%&')
+print(s1)
+
+# caputre ' by using " as quotes
+cat(s2 <- "'()*+,-./:;<=>?@[")
+print(s2)
+
+#\ will capture the first whack \ #(are we using whack for \ ? :)
+cat(s3 <- "\]^_`{|}~") # the \ works
+print(s3)
+
+(subject <- paste0(s1,s2,s3)) #it stores the first wack but with "" stating and ending
+
+cat(subject) #this Cat option solved that problem of extra "" in begining and end
+
+##Recipe 2.2##
+
+#Match a string of the following ASCII control characters: bell, escape, 
+#form feed, line feed, carriage return, horizontal tab, vertical tab.
+#These characters have the hexadecimal ASCII codes 07, 1B, 0C, 0A, 0D, 09, 0B.
+
+Getting ASCII codes upto 150
+
+coderange = c(1:150)
+asciitable_toprint = data.frame(
+coderange,
+as.raw(coderange),
+row.names=rawToChar(as.raw(coderange),multiple=TRUE)
+)
+
+colnames(asciitable_toprint) <- c("dec","hex")
+asciitable_toprint
+
+#Putting dec no. only of given seven hexadecimal ASCII codes 07,1B,0C,0A,0D,09,0B
+
+coderange= c(7,27,12,10,13,9,11)
+asciitable_printable_seven = data.frame(
+coderange,
+as.raw(coderange),
+row.names=rawToChar(as.raw(coderange),multiple=TRUE)
+)
+colnames(asciitable_printable_seven) <- c("dec","hex")
+print(asciitable_printable_seven)
