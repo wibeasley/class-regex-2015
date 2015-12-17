@@ -31,3 +31,21 @@ regex_IterationsH1 <- "(?s).*Maximum number of iterations for H1(?s).*?(\\d+).*"
 IterationsH1<- gsub(regex_IterationsH1, "\\1", subject, perl=T)
 
 print(IterationsH1)
+
+# Code 3.2
+
+regex_iterations <- "(?s).*Maximum number of EM iterations(?s).*?(\\d+).*"
+iterations<- gsub(regex_iterations, "\\1", subject, perl=T)
+
+print(iterations)
+
+# Code 3.3
+
+regex_derivative<- "(?s).*Derivative(?s).*?(\\d.\\d*\\w.\\d+).*"
+derivative<- gsub(regex_derivative, "\\1", subject, perl=T)
+
+print(derivative)
+
+
+
+
