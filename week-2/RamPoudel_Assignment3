@@ -1,0 +1,31 @@
+#Assignment-3
+
+subject <- 
+  "Estimator                                                      MLF
+Information matrix                                        OBSERVED
+Maximum number of iterations                                   100
+Convergence criterion                                    0.100D-05
+Maximum number of EM iterations                               1000
+Convergence criteria for the EM algorithm
+Loglikelihood change                                   0.100D-02
+Relative loglikelihood change                          0.100D-05
+Derivative                                             0.100D-03
+Minimum variance                                         0.100D-03
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-04
+Optimization algorithm                                         EMA"
+
+#Solving Q1 (getting Maximum number of iterations)
+
+regex_estimator <- "(?s).*?OBSERVED\\s+(\\w+\\s+\\w+\\s+\\w+\\s+\\w+).*"
+estimator <- gsub(regex_estimator, "\\1", subject, perl=T)
+print(estimator)
+cat(estimator)
+
+#Solving Q2 (getting Maximum number of iterations for H1)
+
+regex_estimator <- "(?s).*?20\\s+(\\w+\\s+\\w+\\s+\\w+\\s+\\w+\\s+\\w+\\s+\\w+).*"
+estimator <- gsub(regex_estimator, "\\1", subject, perl=T)
+print(estimator)
+cat(estimator)
