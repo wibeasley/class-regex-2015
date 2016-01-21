@@ -23,9 +23,17 @@ Optimization algorithm                                         EMA"
 
 # 1) Build from simplest to final form
 # 2) Contrast "sinlge line" vs "multi line" environments.
+
+# Step in solving
+# 1. Paste the subject chunk into  https://regex101.com/ with  sg modifiers
+# 2. Develop regex
 regex_estimator <- "Estimator"
-# regex_estimator <- "(?s).*?Estimator\\s+(\\w+).*"
-estimator <- gsub(regex_estimator, "\\1", subject, perl=T)
+regex_estimator <- "Estimator\s+(\w+)" # Estimator, then spaces, then group
+# matched the blue , captured the green
+regex_estimator <- "Estimator\s+(\w+).*"  # end on the first non-word character (e.g. end of line)
+regex_estimator <- ".*Estimator\s+(\w+).*" # precedes by any character until it runs into "Estimator"
+# regex_estimator <- "(?s).*?Estimator\\s+(\\w+).*" #
+estimator <- gsub(regex_estimator, "\\1", subject,  perl=T)
 
 print(estimator)
 
